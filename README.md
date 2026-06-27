@@ -1,5 +1,10 @@
 # 🌧 Radar Storm Detector — Home Assistant Integration
 
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/miplatas/time-spent-pie-card?display_name=tag)](https://github.com/miplatas/time-spent-pie-card/releases)
+[![GitHub last commit](https://img.shields.io/github/last-commit/miplatas/time-spent-pie-card)](https://github.com/miplatas/time-spent-pie-card/commits/main)
+[![PayPal](https://img.shields.io/badge/Donate-PayPal-00457C?logo=paypal&logoColor=white)](https://paypal.me/miplatas)
+
 A Home Assistant integration that detects storm conditions using **RainViewer** radar images and automatically publishes data to **MQTT**.
 
 ---
@@ -225,4 +230,4 @@ The following libraries are installed automatically:
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE)
+GNU GENERAL PUBLIC LICENSE Version 3. — see [LICENSE](LICENSE)
