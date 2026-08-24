@@ -9,18 +9,27 @@ A Home Assistant integration that detects storm conditions using **RainViewer** 
 
 ---
 
-## ✨ Features
+## ⚠️ Disclaimer
 
-- 📡 Real-time radar image analysis (RainViewer API — free, no API key required)
-- ⚡ Automatic publishing to MQTT (`radar_storm_detector/status` and `radar_storm_detector/alert`)
-- 🏠 Sensors created automatically in Home Assistant — no YAML needed
-- 🔧 Fully configurable from the UI (no `configuration.yaml` editing required), including live options update without restart
-- 🌍 Radar tile calculated automatically from XYZ tile format
-- 📊 14 state sensors + 4 binary sensors + 3 cameras
-- 🎞️ Animated GIF camera with configurable frame speed and a rolling buffer of the last analyzed frames
-- 🗺️ Three map base styles: **Day** (OpenStreetMap), **Night** (CartoDB dark), **Satellite** (ArcGIS)
-- 🕐 Configurable display timezone (GMT −12 to GMT +14)
-- 🔵 Proximity circles overlay (enabled by default) to visualize storm-distance diagnostics
+> **IMPORTANT:** This integration is an informational tool and is **NOT** an official early warning safety device or a life-safety critical system. Precipitation data and estimated storm metrics rely on third-party radar imagery and automated heuristic calculations. Do not rely exclusively on this integration for personal safety, disaster preparedness, or severe weather emergencies. Always follow instructions and official warnings issued by your local government meteorological agencies and emergency services.
+
+## ✨ Capabilities & Limitations
+
+### ✅ What it CAN do:
+* 📡 **Analyze Radar Tiles:** Fetch and process real-time radar imagery via the free RainViewer API (no API key required) using automated XYZ tile coordinates.
+* 🧭 **Estimate Proximity & Direction:** Calculate storm cover percentage, core distance, direction (bearing), radial approach velocity, and render diagnostic proximity circles.
+* 🗺️ **Generate Multi-Layer Visuals:** Produce static PNGs and animated GIF camera entities over Day, Night, or Satellite base maps with rolling buffer history and customizable timezone footers.
+* 📊 **Expose Rich Entities:** Automatically create 14 state sensors, 4 binary sensors, and 3 cameras in Home Assistant without editing YAML files.
+* ⚡ **Trigger Automations:** Automatically create state and binary sensors (rain, heavy rain, hail, approach status) to trigger Home Assistant automations and scripts.
+* 📨 **Publish to MQTT:** Publish full diagnostic payloads (dBZ values, coverage percentages, proximity metrics) to local or remote MQTT brokers.
+* 🔧 **Live UI Configuration:** Adjust scan intervals, thresholds, alert radiuses, and map settings via the UI for personalized use.
+
+### ❌ What it CANNOT do:
+* 📢 **Replace Official Weather Warnings:** Issue certified, legally recognized severe weather alerts or replace local emergency broadcasting systems.
+* 🎯 **Guarantee Automated Accuracy Independently:** Sensor accuracy (such as `rain_detected` or `hail_detected`) is directly dependent on user-predefined triggers and thresholds (e.g., `Rain threshold`, `Hail threshold`, `Alert distance`) relative to the total analyzed radar tile coverage area and zoom level.
+* ⏱️ **Guarantee Real-time Precision:** Account for third-party radar upload delays, radar beam shadowing, ground clutter, or scan frequency gaps inherent to public radar feeds.
+* 🏠 **Predict Micro-scale Downpours:** Guarantee rain at an exact house roof level, as radar measures atmospheric reflectivity aloft, not ground-level rain gauges.
+* 🌐 **Operate Offline:** Function without an active internet connection, as downloading radar frames and base map tiles requires online access.
 
 ## 🖼️ Image examples
 
